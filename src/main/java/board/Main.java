@@ -1,6 +1,7 @@
 package board;
 
 import board.persistence.migration.MigrationStrategy;
+import board.ui.MainMenu;
 
 import java.sql.SQLException;
 
@@ -12,6 +13,7 @@ public class Main {
         try(var connection = getConnection()) {
             new MigrationStrategy(connection).executeMigration();
         }
+        new MainMenu().execute();
     }
 
 }

@@ -35,7 +35,7 @@ public class BoardService {
 
     public boolean delete(final Long id) throws SQLException {
         var dao = new BoardDAO(connection);
-        try {
+        try{
             if (!dao.exists(id)) {
                 return false;
             }
